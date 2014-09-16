@@ -21,8 +21,8 @@ server {
     ssl_prefer_server_ciphers on;
     ssl_session_cache shared:SSL:10m;
     ssl_session_timeout 10m;
-    ssl_certificate {{ getv $domain | printf "/etc/ssl/%s.cert"}};
-    ssl_certificate_key {{ getv $domain | printf "/etc/ssl/%s.key"}};
+    ssl_certificate {{ getv $domain | printf "/etc/ssl/certs/%s.pem"}};
+    ssl_certificate_key {{ getv $domain | printf "/etc/ssl/private/%s.key"}};
 
     server_name {{getv $domain}};
 
@@ -51,8 +51,8 @@ server {
     ssl_prefer_server_ciphers on;
     ssl_session_cache shared:SSL:10m;
     ssl_session_timeout 10m;
-    ssl_certificate {{ getv $domain | printf "/etc/ssl/%s.cert"}};
-    ssl_certificate_key {{ getv $domain | printf "/etc/ssl/%s.key"}};
+    ssl_certificate {{ getv $domain | printf "/etc/ssl/certs/%s.pem"}};
+    ssl_certificate_key {{ getv $domain | printf "/etc/ssl/private/%s.key"}};
 
     server_name {{getv $domain | printf "www.%s" }};
 
@@ -68,8 +68,8 @@ server {
     ssl_prefer_server_ciphers on;
     ssl_session_cache shared:SSL:10m;
     ssl_session_timeout 10m;
-    ssl_certificate {{ getv $domain | printf "/etc/ssl/%s.cert"}};
-    ssl_certificate_key {{ getv $domain | printf "/etc/ssl/%s.key"}};
+    ssl_certificate {{ getv $domain | printf "/etc/ssl/certs/%s.pem"}};
+    ssl_certificate_key {{ getv $domain | printf "/etc/ssl/private/%s.key"}};
     
     server_name {{getv $domain | printf "www.%s" }};
 
@@ -84,8 +84,8 @@ server {
     ssl_prefer_server_ciphers on;
     ssl_session_cache shared:SSL:10m;
     ssl_session_timeout 10m;
-    ssl_certificate {{ getv $domain | printf "/etc/ssl/%s.cert"}};
-    ssl_certificate_key {{ getv $domain | printf "/etc/ssl/%s.key"}};
+    ssl_certificate {{ getv $domain | printf "/etc/ssl/certs/%s.pem"}};
+    ssl_certificate_key {{ getv $domain | printf "/etc/ssl/private/%s.key"}};
     
     server_name {{getv $domain | printf "%s" }};
 

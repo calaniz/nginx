@@ -1,0 +1,7 @@
+[template]
+src = "nginx.tmpl"
+dest = "/etc/nginx/sites-available/autoconfig"
+owner = "nginx"
+mode = "0644"
+keys = ["/nginx"]
+reload_cmd  = "/usr/sbin/service nginx reload"

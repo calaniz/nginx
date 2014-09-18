@@ -8,7 +8,9 @@ RUN mkdir -p /etc/confd/{conf.d,templates}
 
 ADD conf.d/nginx.toml /etc/confd/conf.d/nginx.toml
 ADD templates/nginx.tmpl /etc/confd/templates/nginx.tmpl
-ADD boot.sh /bin/boot.sh
+ADD ssl/certs/StartSSLTrustChain.pem /etc/ssl/certs/StartSSLTrustChain.pem
+ADD boot /bin/boot
+RUN chmod +x /bin/boot
 
 ONBUILD ADD ssl/certs /etc/ssl/certs
 ONBUILD ADD ssl/private /etc/ssl/private
@@ -17,5 +19,5 @@ EXPOSE 80
 EXPOSE 443
 
 CMD []
-ENTRYPOINT ["/bin/boot.sh"]
+ENTRYPOINT ["/bin/boot"]
 

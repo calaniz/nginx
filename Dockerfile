@@ -33,13 +33,12 @@ Va3l3WuB+rgKjsQ= \n\
 RUN apt-key add /tmp/nginx-signing.key
 RUN echo "deb http://nginx.org/packages/debian/ wheezy nginx" > /etc/apt/sources.list.d/nginx.list
 RUN apt-get update -y && apt-get install --no-install-recommends -y -q nginx 
-RUN curl -o /usr/local/bin/confd -L https://github.com/kelseyhightower/confd/releases/download/v0.6.0-alpha3/confd-0.6.0-alpha3-linux-amd64
+RUN curl -o /usr/local/bin/confd -L https://github.com/kelseyhightower/confd/releases/download/v0.10.0/confd-0.10.0-linux-amd64
 RUN chmod +x /usr/local/bin/confd
 RUN mkdir -p /etc/confd/{conf.d,templates}
 
 ADD conf.d/nginx.toml /etc/confd/conf.d/nginx.toml
 ADD templates/nginx.tmpl /etc/confd/templates/nginx.tmpl
-ADD ssl/certs/StartSSLTrustChain.pem /etc/ssl/certs/StartSSLTrustChain.pem
 ADD boot /bin/boot
 RUN chmod +x /bin/boot
 

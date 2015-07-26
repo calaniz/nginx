@@ -48,6 +48,6 @@ ONBUILD ADD ssl/private /etc/ssl/private
 EXPOSE 80
 EXPOSE 443
 
-CMD []
+CMD ["nginx"]
 ENTRYPOINT ["/bin/boot"]
 

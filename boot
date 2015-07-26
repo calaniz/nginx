@@ -7,7 +7,7 @@ export ETCD=$HOST_IP:4001
 /usr/local/bin/confd -watch -node $ETCD 
 
 if [ "$1" = "nginx" ]; then
-  exec /usr/bin/nginx
+  exec /usr/sbin/nginx
 else
   exec "$@"
 fi

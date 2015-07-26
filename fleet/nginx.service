@@ -8,5 +8,5 @@ EnvironmentFile=/etc/environment
 ExecStartPre=-/usr/bin/docker pull calaniz/nginx
 ExecStartPre=-/usr/bin/docker kill nginx
 ExecStartPre=-/usr/bin/docker rm nginx
-ExecStart=/usr/bin/docker run -e HOST_IP=${COREOS_PRIVATE_IPV4} -v /etc/alanisoft/alanisoft.pem:/etc/ssl/certs/alanisoft.pem -v /etc/alanisoft/alanisoft.key:/etc/ssl/private/alanisoft.key -p 80:80 -p 443:443 --name nginx calaniz/nginx
+ExecStart=/usr/bin/docker run -e HOST_IP=${COREOS_PRIVATE_IPV4} -v /etc/nginx/certs:/etc/nginx/certs -p 80:80 -p 443:443 --name nginx calaniz/nginx
 ExecStop=/usr/bin/docker stop nginx

@@ -50,11 +50,10 @@ server {
     ssl_prefer_server_ciphers on;
     ssl_session_cache shared:SSL:10m;
     ssl_session_timeout 10m;
-    ssl_certificate {{ getv $domain | printf "/etc/ssl/certs/%s.pem"}};
-    ssl_certificate_key {{ getv $domain | printf "/etc/ssl/private/%s.key"}};
+    ssl_certificate {{ getv $domain | printf "/etc/nginx/certs/%s.pem"}};
+    ssl_certificate_key {{ getv $domain | printf "/etc/nginx/certs/%s.key"}};
     ssl_stapling on;
     ssl_stapling_verify on;
-    ssl_trusted_certificate /etc/ssl/certs/StartSSLTrustChain.pem;
     resolver 8.8.8.8 8.8.4.4;
 
     server_name {{getv $domain}};
@@ -82,11 +81,10 @@ server {
     ssl_prefer_server_ciphers on;
     ssl_session_cache shared:SSL:10m;
     ssl_session_timeout 10m;
-    ssl_certificate {{ getv $domain | printf "/etc/ssl/certs/%s.pem"}};
-    ssl_certificate_key {{ getv $domain | printf "/etc/ssl/private/%s.key"}};
+    ssl_certificate {{ getv $domain | printf "/etc/nginx/certs/%s.pem"}};
+    ssl_certificate_key {{ getv $domain | printf "/etc/nginx/certs/%s.key"}};
     ssl_stapling on;
     ssl_stapling_verify on;
-    ssl_trusted_certificate /etc/ssl/certs/StartSSLTrustChain.pem;
     resolver 8.8.8.8 8.8.4.4;
 
     server_name {{getv $domain | printf "www.%s" }};
@@ -103,11 +101,10 @@ server {
     ssl_prefer_server_ciphers on;
     ssl_session_cache shared:SSL:10m;
     ssl_session_timeout 10m;
-    ssl_certificate {{ getv $domain | printf "/etc/ssl/certs/%s.pem"}};
-    ssl_certificate_key {{ getv $domain | printf "/etc/ssl/private/%s.key"}};
+    ssl_certificate {{ getv $domain | printf "/etc/nginx/certs/%s.pem"}};
+    ssl_certificate_key {{ getv $domain | printf "/etc/nginx/certs/%s.key"}};
     ssl_stapling on;
     ssl_stapling_verify on;
-    ssl_trusted_certificate /etc/ssl/certs/StartSSLTrustChain.pem;
     resolver 8.8.8.8 8.8.4.4;
     
     server_name {{getv $domain | printf "www.%s" }};
@@ -123,11 +120,10 @@ server {
     ssl_prefer_server_ciphers on;
     ssl_session_cache shared:SSL:10m;
     ssl_session_timeout 10m;
-    ssl_certificate {{ getv $domain | printf "/etc/ssl/certs/%s.pem"}};
-    ssl_certificate_key {{ getv $domain | printf "/etc/ssl/private/%s.key"}};
+    ssl_certificate {{ getv $domain | printf "/etc/nginx/certs/%s.pem"}};
+    ssl_certificate_key {{ getv $domain | printf "/etc/nginx/certs/%s.key"}};
     ssl_stapling on;
     ssl_stapling_verify on;
-    ssl_trusted_certificate /etc/ssl/certs/StartSSLTrustChain.pem;
     resolver 8.8.8.8 8.8.4.4;
     
     server_name {{getv $domain | printf "%s" }};

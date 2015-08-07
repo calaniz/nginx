@@ -41,7 +41,6 @@ ADD conf.d/nginx.toml /etc/confd/conf.d/nginx.toml
 ADD templates/nginx.tmpl /etc/confd/templates/nginx.tmpl
 ADD boot /bin/boot
 RUN chmod +x /bin/boot
-RUN rm /var/run/nginx.pid
 
 EXPOSE 80
 EXPOSE 443

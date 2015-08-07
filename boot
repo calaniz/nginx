@@ -8,6 +8,6 @@ export ETCD=$HOST_IP:4001
 
 if [ "$1" = "nginx" ]; then
   exec /usr/sbin/nginx
-else
-  exec "$@"
 fi
+
+exec "$@"

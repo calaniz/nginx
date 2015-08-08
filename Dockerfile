@@ -48,4 +48,3 @@ EXPOSE 443
 
 CMD ["nginx"]
 ENTRYPOINT ["/bin/boot"]
-
